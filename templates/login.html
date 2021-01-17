@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie rating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/21404b6554.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</head>
+
+<header class="round-bottom">
+    <a href="index.html" class="logo">Movie Review App</a>
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="review.html"> Review </a>
+        <a href="history.html" onclick="displayReview()"> History </a>
+        <a href="signup.html">Sign up</a>
+        <a class="active"  href="login.html"> Login </a>
+    </div>
+</header>
+
+<body>
+    <form id='logIn' >
+        <div class="wrapper">
+            <div class="log_in_form">
+
+                <h1 style="color:white;">Log In!</h1>
+                <input type="text" id="emailAddress" name="emailAddress" placeholder="Username or Email Address"
+                    required><br>
+                <br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br>
+                <br>
+                <input type="button" id="log_in_button" value="Log In" onclick="login()">
+                <br>
+                <br>
+                <a href="signup.html" class="sign_up_text">Sign-Up</a>
+            </div>
+        </div>
+    </form>
+</body>
+
+<footer>Copyrights © 2020 All Rights Reserved By Your Company</footer>
+
+
+</html>

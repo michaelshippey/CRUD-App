@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie rating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/21404b6554.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<header class="round-bottom">
+    <a href="index.html" class="logo">Movie Review App</a>
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="review.html"> Review </a>
+        <a class="active"  href="history.html"> History </a>
+        <a href="signup.html">Sign up</a>
+        <a href="login.html" id="login"> Login </a>
+        <a href="login.html" id="logout" onclick="logout()"> Logout </a>
+    </div>
+</header>
+
+<h1 class="history-title">{{ session['user'] }} Previous Reviews</h1>
+<h4 class="history-title">Delete or edit your reviews</h4>
+<body id = "historytable">
+<!-- <button type="button" onclick="deleteFunction()">Click Me!</button> -->
+    <script>
+        $(document).ready(function(){
+            $.getJSON("{{ url_for('static', filename='data/history.json') }}", function(data){
+            var history_data = '';
+            var integer = 0;
+            $.each(data, function(key, value){
+                history_data +='<table class="history-container">'
+                history_data += '<tr id="movie'+integer+'">';
+                history_data += '<td>' +value[5] + '</td>';                              //movie title
+                history_data += '<td class = "header-right">'+value[4]+'</td>';          //date
+                history_data += '</tr>';
+                history_data += '<tr id="score'+integer+'">';
+                //history_data += '<td contentEditable>' +value[2]+'.0/5.0' +'</td>';                     //score
+
+                history_data += '<td contentEditable>' +value[2]+'</td>'; 
+
+                history_data += '<td>' + '<button class="header-right margin-left-10px" onclick="testFunction('+integer+')">Edit</button>';
+                history_data += '<button class="header-right" onclick="deleteFunction('+integer+')">Delete</button>' + '</td>';
+                history_data += '</tr>';
+                history_data += '<tr id="comment' + integer +'">';
+                //history_data += '<td contentEditable>' + 'comment: ' +value[3]+'</td>';                //comment
+
+                history_data += '<td contentEditable>' + value[3]+'</td>';
+
+                history_data += '</tr>';
+                history_data += '</table>';
+                integer=integer+1;
+            });
+            $('#historytable').append(history_data);
+        });
+       });
+   
+    </script>
+    <script>
+        function testFunction(integer){
+
+            var rowMovie = document.getElementById("movie"+integer);
+            var cellMovie = rowMovie.getElementsByTagName("td");
+            
+            var rowScore = document.getElementById("score"+integer);
+            var cellScore = rowScore.getElementsByTagName("td");
+
+            var rowComment = document.getElementById("comment"+integer);
+            var cellComment = rowComment.getElementsByTagName("td");
+
+            //alert(cellMovie[0].innerText + " " + cellScore[0].innerText + " " + cellComment[0].innerText);
+
+            let movie = cellMovie[0].innerText;
+            let score = cellScore[0].innerText;
+            let comment = cellComment[0].innerText;
+            $.post("/history/update",
+            {
+                'movie':movie,
+                'score':score,
+                'comment':comment
+            },
+            function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+            }, "json");
+        }
+    </script>
+    <script>
+        function deleteFunction(integer){
+            var rowMovie = document.getElementById("movie"+integer);
+            var cellDate = rowMovie.getElementsByClassName("header-right");
+            let date = cellDate[0].innerText;
+            console.log("date: ", date);
+            $.post("/history/delete", 
+            {
+                'date':date
+            },
+            function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+            }, "json");
+
+        }
+    </script>
+   
+</body>
+
+<footer>Copyrights © 2020 All Rights Reserved By Your Company</footer>
+
+</html>

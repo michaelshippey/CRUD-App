@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie rating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/21404b6554.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/search.js') }}"></script>
+</head>
+
+<header class="round-bottom">
+    <a href="index.html" class="logo">Movie Review App</a>
+    <div class="header-right">
+        <a class="active" href="index.html">Home</a>
+        <a href="review.html"> Review </a>
+        <a href="history.html" onclick="displayReview()"> History </a>
+        <a href="signup.html">Sign up</a>
+        <a href="login.html" id="login"> Login </a>
+        <a href="login.html" id="logout" onclick="logout()"> Logout </a>
+    </div>
+</header>
+
+        <body>
+            <div class="wrapper">
+                <input id = "input" class = "input" placeholder="Movie title">
+                <button onclick="searchMovie()" id="search"><i class="fas fa-search"></i></button>
+            </div>
+        </body>
+     
+
+<footer>Copyrights © 2020 All Rights Reserved By Your Company</footer>
+
+</html>

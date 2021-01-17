@@ -1,0 +1,51 @@
+{
+  "name": "cs471-f20-team2",
+  "version": "1.0.0",
+  "description": "Movie Rating App",
+  "main": "app.js",
+  "scripts": {
+    "start": "python src/app.py",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker-up": "docker-compose -f docker/postgres/docker-compose.yml up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoiseState/CS471-F20-Team2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoiseState/CS471-F20-Team2/issues"
+  },
+  "homepage": "https://github.com/BoiseState/CS471-F20-Team2#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "optionator": "^0.9.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jquery": true 
+    }
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "faker": "^4.1.0",
+    "react-multi-select-component": "^2.0.10",
+    "react-onclickoutside": "^6.9.0",
+    "react-to-print": "^2.1.1",
+    "semantic-ui-react": "^0.88.2"
+  }
+}

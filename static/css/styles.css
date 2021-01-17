@@ -1,0 +1,299 @@
+* {box-sizing: border-box;}
+
+
+body { 
+  margin: 0;
+  font-family: Arial;
+}
+
+header {
+  overflow: hidden;
+  background-color: #38729d;
+  color:white;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%; 
+  padding: 20px 10px;
+}
+
+header a {
+  float: left;
+  color:white;
+  text-align: center;
+  padding: 8px;
+  margin:2px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+header a:hover:not(.logo){
+  background-color: #708090;
+  color:white;
+}
+
+header a.active {
+  background-color: #708090;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+footer {
+	font-size: 12px;
+	overflow: hidden;
+	background-color: #38729d;
+	color:white;
+	border-top-left-radius: 30%;
+  border-top-right-radius: 30%; 
+ 
+	padding: 15px 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+html {
+  background: #F2F3F4;
+}
+
+body{
+
+	width: 100%;
+	height: 100vh;
+}
+
+.wrapper{
+  background: white;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 550px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.wrapper .input {
+    
+    width: 85%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.searchbtn {
+  float: right;
+    background: #3498DB;
+    width: 10%;
+    height: 10%;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.searchbtn .fas{
+  
+    background: #3498DB;
+	position: right;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+.input {
+    background: white;
+}
+
+.sign_up_form {
+  border-radius: 25px;
+  width: 80%;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+  background: #38729B;
+  padding: 3%;
+  margin: 7% auto 0;
+  text-align: center;
+}
+
+.log_in_form{
+  border-radius: 25px;
+  width:80%;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+  background: #38729B;
+  padding: 3%;
+  margin: 7% auto 0;
+  text-align: center;
+}
+
+.already_a_member {
+  color: white;
+  font-size: 10px;
+}
+
+.sign_up_text {
+  color: white;
+  font-size: 10px;
+}
+
+#log_in_button{
+  width: 48%;
+  height:10%;
+  color: #969696;
+}
+
+#sign_in_button {
+  width: 97%;
+  height: 10%;
+  color: #969696;
+}
+.titles {
+  text-align:center;
+  display:block;
+  font-size: 40px;
+  background: -webkit-linear-gradient(#000000, #38729B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.content {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+.box {
+  text-align:center;
+  display:block;
+  top: 50%;
+  left: 50%;
+
+}
+.box a {
+  font-size: 50px;
+  color: #f1c40f;
+  transition: .3s all;
+}
+.box a:hover{
+  color:  #f1c40f;
+}
+.b1:hover ~ a{
+  color: #493535;
+}
+.b2:hover ~ a{
+  color: #313131;
+}
+.b3:hover ~ a{
+  color: #313131;
+}
+.b4:hover ~ a{
+  color: #313131;
+}
+.b5:hover ~ a{
+  color: #313131;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.submitreview {
+  width: 20%;
+  height:10%;
+  color: #969696;
+  float: left;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 40px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 80%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 70%;
+    margin-top: 10;
+    margin-bottom: 10;
+  }
+}
+
+.history-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.history-container{
+  width: 60%;
+  height: 10%;
+  margin-left: 20%;
+  outline-style: solid;
+  outline-color: black;
+  margin-bottom: 10px;
+}
+
+.align-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.margin-left-10px{
+  margin-left: 10px;
+}
+
+.movie-history-row {
+  padding-top: 100px;
+}
+

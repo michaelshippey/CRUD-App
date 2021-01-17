@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie rating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/21404b6554.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<header class="round-bottom">
+    <a href="index.html" class="logo">Movie Review App</a>
+    <div class="header-right">
+        <a href="index.html">Home</a>
+        <a href="review.html"> Review </a>
+        <a href="history.html" onclick="displayReview()"> History </a>
+        <a class="active"  href="signup.html">Sign up</a>
+        <a href="login.html" id="login"> Login </a>
+        <a href="login.html" id="logout" onclick="logout()"> Logout </a>
+    </div>
+</header>
+
+<body>
+    <form>
+        <div class="wrapper">
+
+            <div class="sign_up_form">
+
+                <h1 style="color:white;">Sign Up Now!</h1>
+                <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                <input type="text" id="lname" name="lname" placeholder="Last Name" required><br>
+                <br>
+                <input type="text" id="emailAddress" name="emailAddress" placeholder="Email Address" required>
+                <input type="text" id="uname" name="uname" placeholder="Username" required><br>
+                <br>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="rtype_password" name="rtype_password" placeholder="Retype Password"
+                    required><br>
+                <br>
+                <input type="submit" id="sign_in_button" value="Sign Up"  onclick="register()">
+                <br>
+                <br>
+                <a href="login.html" class="already_a_member">Already a member?</a>
+
+            </div>
+
+        </div>
+    </form>
+</body>
+
+<footer>Copyrights © 2020 All Rights Reserved By Your Company</footer>
+
+
+</html>
